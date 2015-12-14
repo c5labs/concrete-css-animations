@@ -77,5 +77,6 @@ class Controller extends Package
         | Require the animation core in all requests.
          */
         $r->requireAsset('animate-it');
+        $r->requireAsset('javascript', 'jquery');
     }
 }
