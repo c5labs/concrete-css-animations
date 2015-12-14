@@ -45,22 +45,22 @@ class Controller extends Package
          */
         $al->register(
                 'css', 'animate-it/css', 'assets/css3-animate-it-master/css/animations.css',
-                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_HEADER, 'minify' => false, 'combine' => false), $this
+                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_HEADER, 'minify' => true, 'combine' => true), $this
         );
 
         $al->register(
                 'css', 'animate-it/ie-fix-css', 'assets/css3-animate-it-master/css/animations-ie-fix.css',
-                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_HEADER, 'minify' => false, 'combine' => false), $this
+                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_HEADER, 'minify' => true, 'combine' => true), $this
         );
 
         $al->register(
                 'javascript', 'animate-it/js', 'assets/css3-animate-it-master/js/css3-animate-it.js',
-                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_FOOTER, 'minify' => false, 'combine' => false), $this
+                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_FOOTER, 'minify' => true, 'combine' => true), $this
         );
 
         $al->register(
                 'javascript', 'animate-it/injector', 'assets/injector.js',
-                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_FOOTER, 'minify' => false, 'combine' => false), $this
+                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_FOOTER, 'minify' => true, 'combine' => true), $this
         );
 
         $al->registerGroup(
