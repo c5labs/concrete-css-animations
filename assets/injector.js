@@ -83,21 +83,24 @@
             delimiter = ', .';
         }
 
-        return '.' + classes.animations.join(delimiter);
+        return (delimiter ? '.' : '') + classes.animations.join(delimiter);
     }
 
     function removeClasses()
     {
-        $('.ccm-custom-style-container')
+        $('.animated-css-class')
             .removeClass(getAnimationClassString(' ') + ' animated');
     }
 
     if (CCM_EDIT_MODE) {
+        window.cssAnimationsPackage = {
+            animations: classes.animations.concat(classes.modifiers),
+        };
         setInterval(injectClasses, 500);
     } else {
         $(getAnimationClassString())
             .wrap($('<div class="animatedParent animateOnce"></div>'))
-            .addClass('animated');
+            .addClass('animated animated-css-class');
     }
 
 }(jQuery));

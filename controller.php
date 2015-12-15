@@ -26,6 +26,8 @@ class Controller extends Package
 
     public function on_start()
     {
+        define('CSS3_ANIMATION_PACKAGE', true);
+        
         $this->registerAssets();
     }
 
