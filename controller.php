@@ -65,7 +65,7 @@ class Controller extends Package
 
         $al->register(
                 'javascript', 'animate-it/injector', 'assets/injector.js',
-                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_FOOTER, 'minify' => true, 'combine' => true), $this
+                array('version' => '0.9.0', 'position' => Asset::ASSET_POSITION_HEADER, 'minify' => true, 'combine' => true), $this
         );
 
         $al->registerGroup(
@@ -74,6 +74,7 @@ class Controller extends Package
                 array('css', 'animate-it/css'),
                 array('css', 'animate-it/ie-fix-css'),
                 array('javascript', 'animate-it/js'),
+                array('javascript', 'jquery'),
                 array('javascript', 'animate-it/injector'),
             )
         );

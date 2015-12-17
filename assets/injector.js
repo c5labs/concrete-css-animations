@@ -1,4 +1,8 @@
-(function ($) {
+window.cssAnimationsPackage = {
+    excludeSelectors: [],
+};
+
+$(window).load(function () {
     "use strict";
 
     var classes = {
@@ -95,14 +99,14 @@
     }
 
     if (CCM_EDIT_MODE) {
-        window.cssAnimationsPackage = {
-            animations: classes.animations.concat(classes.modifiers),
-        };
+        window.cssAnimationsPackage.animations = classes.animations.concat(classes.modifiers);
         setInterval(injectClasses, 500);
     } else {
+        console.log(window.cssAnimationsPackage.excludeSelectors.join(', '));
         $(getAnimationClassString())
+            .not(window.cssAnimationsPackage.excludeSelectors.join(', '))
             .wrap($('<div class="animatedParent animateOnce"></div>'))
             .addClass('animated animated-css-class');
     }
 
-}(jQuery));
+});
