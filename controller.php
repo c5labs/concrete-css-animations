@@ -1,10 +1,13 @@
 <?php
 namespace Concrete\Package\CssAnimations;
 
+use Events;
+use Core;
 use Asset;
 use AssetList;
 use Concrete\Core\Http\ResponseAssetGroup;
 use Package;
+use Page;
  
 defined('C5_EXECUTE') or die('Access Denied.');
  
@@ -75,10 +78,12 @@ class Controller extends Package
             )
         );
 
-        /*
-        | Require the animation core in all requests.
-         */
-        $r->requireAsset('animate-it');
-        $r->requireAsset('javascript', 'jquery');
+        Events::addListener('on_before_render', function ($e) use ($r) {
+            /*
+            | Require the animation core in all requests.
+             */
+            $r->requireAsset('animate-it');
+            $r->requireAsset('javascript', 'jquery');
+        });
     }
 }
