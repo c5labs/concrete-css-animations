@@ -7,6 +7,8 @@
             'bounceInLeft',
             'bounceInUp',
             'bounceInDown',
+            'fadeIn',
+            'fadeOut',
             'fadeInRight',
             'fadeInLeft',
             'fadeInUp',
