@@ -17,6 +17,10 @@ $(window).load(function () {
             'fadeInLeft',
             'fadeInUp',
             'fadeInDown',
+            'fadeInRightShort',
+            'fadeInLeftShort',
+            'fadeInUpShort',
+            'fadeInDownShort',
             'flipInX',
             'flipInY',
             'rotateIn',
@@ -102,7 +106,6 @@ $(window).load(function () {
         window.cssAnimationsPackage.animations = classes.animations.concat(classes.modifiers);
         setInterval(injectClasses, 500);
     } else {
-        console.log(window.cssAnimationsPackage.excludeSelectors.join(', '));
         $(getAnimationClassString())
             .not(window.cssAnimationsPackage.excludeSelectors.join(', '))
             .wrap($('<div class="animatedParent animateOnce"></div>'))
