@@ -13,7 +13,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
  
 class Controller extends Package 
 {
-    protected $pkgHandle = 'css-animations';
+    protected $pkgHandle = 'css_animations';
     protected $appVersionRequired = '5.7.1';
     protected $pkgVersion = '0.9.0';
 
