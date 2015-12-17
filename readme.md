@@ -1,7 +1,7 @@
 #CSS Animation Package for concrete5
 **Requires Concrete5 5.7.0+**
 ##Install
-1. Unzip and copy the 'css-animations' folder to your concrete5 installations 'packages' folder. **(Ensure the folder is correctly named)**
+1. Unzip and copy the 'css_animations' folder to your concrete5 installations 'packages' folder.  **(check the folder name, it's important)**
 2. Login, click on the Settings icon on the right of the top bar, click 'Extend concrete5'.
 3. Click on the 'Install' button next to 'CSS Animations Package', follow the install instructions.
 5. Go to a page, enter edit mode, click on a block and select 'Design & Custom Template'.
