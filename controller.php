@@ -15,7 +15,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'css_animations';
     protected $appVersionRequired = '5.7.1';
-    protected $pkgVersion = '0.9.0';
+    protected $pkgVersion = '0.9.1';
 
     public function getPackageName() 
     {
