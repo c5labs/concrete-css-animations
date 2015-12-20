@@ -1,36 +1,38 @@
 <?php
 namespace Concrete\Package\CssAnimations;
 
-use Events;
 use Core;
+use Page;
 use Asset;
+use Events;
+use Package;
 use AssetList;
 use Concrete\Core\Http\ResponseAssetGroup;
-use Package;
-use Page;
- 
+
 defined('C5_EXECUTE') or die('Access Denied.');
- 
-class Controller extends Package 
+
+class Controller extends Package
 {
     protected $pkgHandle = 'css_animations';
+
     protected $appVersionRequired = '5.7.1';
+
     protected $pkgVersion = '0.9.1';
 
-    public function getPackageName() 
+    public function getPackageName()
     {
-        return t("CSS Animations Package");
+        return t("CSS Block Animations Package");
     }
 
-    public function getPackageDescription() 
+    public function getPackageDescription()
     {
         return t("A package that installs CSS animation class prefixes for use in custom classes.");
-    }    
+    }
 
     public function on_start()
     {
         define('CSS3_ANIMATION_PACKAGE', true);
-        
+
         $this->registerAssets();
     }
 
@@ -42,8 +44,6 @@ class Controller extends Package
     protected function registerAssets()
     {
         $al = AssetList::getInstance();
-        
-        $r = ResponseAssetGroup::get();
 
         /*
          | CSS3 Animations
@@ -79,7 +79,9 @@ class Controller extends Package
             )
         );
 
-        Events::addListener('on_before_render', function ($e) use ($r) {
+        Events::addListener('on_before_render', function ($e) {
+            $r = ResponseAssetGroup::get();
+
             /*
             | Require the animation core in all requests.
              */
