@@ -13,22 +13,52 @@ defined('C5_EXECUTE') or die('Access Denied.');
 
 class Controller extends Package
 {
+    /**
+     * Package handle.
+     *
+     * @var string
+     */
     protected $pkgHandle = 'css_animations';
 
-    protected $appVersionRequired = '5.7.1';
-
+    /**
+     * Package Version.
+     *
+     * @var string
+     */
     protected $pkgVersion = '0.9.1';
 
+    /**
+     * Minimum compatible concrete5 version.
+     *
+     * @var string
+     */
+    protected $appVersionRequired = '5.7.1';
+
+    /**
+     * Package name.
+     *
+     * @return string
+     */
     public function getPackageName()
     {
         return t("CSS Block Animations Package");
     }
 
+    /**
+     * Package description.
+     *
+     * @return string
+     */
     public function getPackageDescription()
     {
         return t("A package that installs CSS animation class prefixes for use in custom classes.");
     }
 
+    /**
+     * On CMS boot.
+     *
+     * @return void
+     */
     public function on_start()
     {
         define('CSS3_ANIMATION_PACKAGE', true);
@@ -36,11 +66,21 @@ class Controller extends Package
         $this->registerAssets();
     }
 
+    /**
+     * On package install.
+     *
+     * @return void
+     */
     public function install()
     {
         $pkg = parent::install();
     }
 
+    /**
+     * Register the packages assets.
+     *
+     * @return void
+     */
     protected function registerAssets()
     {
         $al = AssetList::getInstance();
