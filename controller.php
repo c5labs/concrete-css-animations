@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Package\CssAnimations;
+namespace Concrete\Package\ConcreteCssAnimations;
 
 use Core;
 use Page;
@@ -18,7 +18,7 @@ class Controller extends Package
      *
      * @var string
      */
-    protected $pkgHandle = 'css_animations';
+    protected $pkgHandle = 'concrete-css-animations';
 
     /**
      * Package Version.
@@ -41,7 +41,7 @@ class Controller extends Package
      */
     public function getPackageName()
     {
-        return t("CSS Block Animations Package");
+        return t("CSS Block Animations");
     }
 
     /**
