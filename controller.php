@@ -120,13 +120,17 @@ class Controller extends Package
         );
 
         Events::addListener('on_before_render', function ($e) {
-            $r = ResponseAssetGroup::get();
+            $c = Page::getCurrentPage();
 
-            /*
-            | Require the animation core in all requests.
-             */
-            $r->requireAsset('animate-it');
-            $r->requireAsset('javascript', 'jquery');
+            if (!$c->isEditMode()) {
+                $r = ResponseAssetGroup::get();
+
+                /*
+                | Require the animation core in all requests.
+                 */
+                $r->requireAsset('animate-it');
+                $r->requireAsset('javascript', 'jquery');
+            }
         });
     }
 }
