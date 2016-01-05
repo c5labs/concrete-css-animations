@@ -41,7 +41,7 @@ class Controller extends Package
      */
     public function getPackageName()
     {
-        return t("CSS Block Animations");
+        return t("CSS Block Animation Components");
     }
 
     /**
