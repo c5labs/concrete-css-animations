@@ -122,15 +122,17 @@ class Controller extends Package
         Events::addListener('on_before_render', function ($e) {
             $c = Page::getCurrentPage();
 
-            $r = ResponseAssetGroup::get();
-            
-            $r->requireAsset('javascript', 'jquery');
-            $r->requireAsset('javascript', 'animate-it/injector');
+            if ($c instanceof Page) {
+                $r = ResponseAssetGroup::get();
+                
+                $r->requireAsset('javascript', 'jquery');
+                $r->requireAsset('javascript', 'animate-it/injector');
 
-            if (!$c->isEditMode()) {
-                $r->requireAsset('css', 'animate-it/css');
-                $r->requireAsset('css', 'animate-it/ie-fix-css');
-                $r->requireAsset('javascript', 'animate-it/js');
+                if (!$c->isEditMode()) {
+                    $r->requireAsset('css', 'animate-it/css');
+                    $r->requireAsset('css', 'animate-it/ie-fix-css');
+                    $r->requireAsset('javascript', 'animate-it/js');
+                }
             }
         });
     }
