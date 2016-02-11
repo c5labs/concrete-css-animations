@@ -2,7 +2,7 @@ window.cssAnimationsPackage = {
     excludeSelectors: [],
 };
 
-$(window).load(function () {
+$(function () {
     "use strict";
 
     var classes = {
