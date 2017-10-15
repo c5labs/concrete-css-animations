@@ -111,7 +111,13 @@ $(function () {
             .wrap($('<div class="animatedParent animateOnce"></div>'))
             .addClass('animated animated-css-class')
             .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-                $(this).removeClass(getAnimationClassString(' ') + ' animated');
+                $(this).parent().removeClass('animatedParent animateOnce');
+                $(this).removeClass(
+                    getModifiersClassString(' ') + ' ' + 
+                    getAnimationClassString(' ') + 
+                    ' animated go'
+                )
+                .addClass('animations-complete');
             });
     }
 
