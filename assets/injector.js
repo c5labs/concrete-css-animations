@@ -109,7 +109,10 @@ $(function () {
         $(getAnimationClassString())
             .not(window.cssAnimationsPackage.excludeSelectors.join(', '))
             .wrap($('<div class="animatedParent animateOnce"></div>'))
-            .addClass('animated animated-css-class');
+            .addClass('animated animated-css-class')
+            .one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+                $(this).removeClass(getAnimationClassString(' ') + ' animated');
+            });
     }
 
 });
